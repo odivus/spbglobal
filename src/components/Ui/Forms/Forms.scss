@@ -1,0 +1,49 @@
+label {
+  display: block;
+  margin-top: 28px;
+  font-size: 1.2rem;
+  color: #585858;
+}
+
+.text-input {
+  display: block;
+  font-family: 'Fira-sans-regular', Arial, sans-serif;
+  font-size: 1.4rem;
+  width: 100%;
+  height: 2.4rem;
+  margin: 8px 0;
+}
+
+.file-input {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.error {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: tomato;
+  padding: 10px 0;
+}
+
+.form {
+  max-width: 400px;
+}
+
+.feedbackForm {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(2, 6fr);
+  column-gap: 50px;
+  max-width: 800px;
+
+  :nth-child(3) {
+    grid-column-start: span 2;
+  }
+
+  @media (max-width: 660px) {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+  }
+}

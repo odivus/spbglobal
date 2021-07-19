@@ -1,0 +1,245 @@
+@font-face {
+  font-family: 'Fira-sans-regular';
+  src: url('./assets/fonts/fira-sans-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Fira-sans-medium';
+  font-weight: 500;
+  src: url('./assets/fonts/fira-sans-medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Fira-sans-italic';
+  src: url('./assets/fonts/fira-sans-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Fira-sans-light-italic';
+  src: url('./assets/fonts/fira-sans-light-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'PT-serif';
+  font-weight: bold;
+  src: url('./assets/fonts/pt-serif-bold.woff2') format('woff2');
+}
+
+.bg-color-main {
+  background-color: #c2cedf;
+}
+
+.bg-color-about {
+  background-color: #dbd5df;
+}
+
+.bg-color-white {
+  background-color: #ffffff;
+}
+
+body {
+  font-family: 'Fira-sans-regular', Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  @media (max-width: 560px) {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+}
+
+a {
+  color: #fff700;
+  text-decoration: none;
+}
+
+h2 {
+  font-family: 'PT-serif', 'Times New Roman', Times, serif;
+  font-size: 2.4rem;
+  line-height: 2.3rem;
+  margin-bottom: 1.0rem;
+  
+  @media (max-width: 560px) {
+    font-size: 2rem;
+    line-height: 1.9rem;
+    margin-bottom: .6rem;
+  }
+}
+
+h3 {
+  font-family: 'Fira-sans-light-italic', Arial, Helvetica, sans-serif;
+  font-size: 2.6rem;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+p {
+  margin: 1.1rem 0;
+}
+
+ul {
+  line-height: 2.2rem;
+
+  @media (max-width: 560px) {
+    line-height: 1.4rem;
+    margin-top: .6rem;
+  }
+}
+
+li {
+  span {
+    position: relative;
+    width: fit-content;
+
+    a {
+      &::after {
+        opacity: 0;
+        position: absolute;
+        content: '';
+        height: 3px;
+        width: 0;
+        left: 0;
+        bottom: -8px;
+        background: #57FE7C;
+        transition: width .25s;
+      }
+
+      &:hover:after,
+      &:focus:after {
+        opacity: 1;
+        width: 100%;
+      }
+    }
+  }
+   
+  @media (max-width: 560px) {
+    margin-bottom: .7rem;
+  }
+} 
+
+iframe {
+  width: 100%;
+  height: 24vw;
+
+  @media (max-width: 980px) {
+    height: 50vw;
+  }
+
+  @media (max-width: 580px) {
+    height: 60vw;
+  }
+}
+
+.content-centered {
+  max-width: 720px;
+  margin: 0 auto;
+  
+  img {
+    width: 90%;
+  }
+}
+
+.content-h3 {
+  margin-top: 20px;
+}
+
+.h-centered {
+  margin: 0 auto;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 30px;
+  margin: 30px 0;
+
+  @media (max-width: 980px) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media (max-width: 580px) {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+.gallery-caption {
+  padding: 12px 12px 20px;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    padding: 12px;
+  }
+}
+
+.wrap {
+  // max-width: 1440px;
+  // margin: 0 auto;
+  width: 100%;
+}
+
+.wrapper-main,
+.wrapper-about,
+.wrapper-contacts,
+.wrapper-portfolio,
+.wrapper-forstartups,
+.wrapper-forinvestors {
+  padding-bottom: 60px;
+
+  @media (max-width: 560px) {
+    padding-bottom: 20px;
+  }
+}
+
+.wrapper-main {
+  background-color: #c2cedf;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.068),rgba(0, 0, 0, 0.5)) , url('./assets/images/bg-main.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper-about {
+  background-color: #dbd5df;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.068),rgba(0, 0, 0, 0.3)), url('./assets/images/bg-about.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper-portfolio {
+  background-color: #ebe7bc;
+  background-image: linear-gradient(to bottom, rgba(255, 251, 1, 0.036),rgba(70, 67, 0, 0.5)), url('./assets/images/bg-portfolio.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper-forinvestors {
+  background-color: #b7d4e0;
+  background-image: linear-gradient(to bottom, rgba(147, 172, 255, 0.036),rgba(0, 27, 114, 0.5)), url('./assets/images/bg-forinvestors.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper-forstartups {
+  background-color: #e0d3bf;
+  background-image: linear-gradient(to bottom, rgba(251, 236, 226, 0.036),rgba(110, 40, 0, 0.5)), url('./assets/images/bg-forstartups.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper-contacts {
+  background-color: #f1cfcf;
+  background-image: linear-gradient(to bottom, rgba(251, 236, 226, 0.036),rgba(110, 40, 0, 0.5)), url('./assets/images/bg-contacts.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

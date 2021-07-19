@@ -1,0 +1,33 @@
+.social {
+  display: flex;
+
+  a:nth-child(2) {
+    padding: 0 18px;
+  }
+  
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.social_screen_small {
+  display: flex;
+  margin-top: 30px;
+
+  a:nth-child(2) {
+    padding: 0 28px;
+  }
+}
+
+.social__img {
+  width: 36px;
+  height: 36px;
+}

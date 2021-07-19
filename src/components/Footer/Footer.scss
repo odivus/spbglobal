@@ -1,0 +1,42 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
+  margin: 31px 0 0;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #737272;
+
+  @media (max-width: 560px) {
+    flex-direction: column;
+  }
+}
+
+.footer_bg-color_main {
+  background-color: #1e4b70;
+}
+
+.footer_bg-color_about {
+  background-color: #504855;
+}
+
+.footer_bg-color_portfolio {
+  background-color: #52512c;
+}
+
+.footer_bg-color_forinvestors {
+  background-color: #3e4a58;
+}
+
+.footer_bg-color_forstartups {
+  background-color: #68533d;
+}
+
+.footer_bg-color_contacts {
+  background-color: #6b555a;
+}
+
+.footer__item {
+  margin-top: 20px;
+  text-align: center;
+}

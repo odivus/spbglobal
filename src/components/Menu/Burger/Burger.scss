@@ -1,0 +1,61 @@
+#burger-icon {
+  display: none;
+  width: 40px;
+  height: 31px;
+  position: relative;
+  cursor: pointer;
+   
+  @media (max-width: 1080px) {
+    display: block;
+  }
+}
+
+#burger-icon.click {
+  span:nth-child(1) {
+    animation: translate-1;
+    animation-duration: .5s;
+  }
+  span:nth-child(3) {
+    animation: translate-3;
+    animation-duration: .5s;
+  }
+}
+
+@keyframes translate-1 {
+  0% {
+    transform: translate(0, 7px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes translate-3 {
+  0% {
+    transform: translate(0, -7px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+#burger-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  background: #fff700;
+}
+
+#burger-icon span:nth-child(1) {
+  top: 0px;
+}
+
+#burger-icon span:nth-child(2) {
+  top: 14px;
+}
+
+#burger-icon span:nth-child(3) {
+  top: 28px;
+}

@@ -1,0 +1,18 @@
+.logo {
+  display: block;
+  width: 164px;
+  height: auto;
+
+  @media (max-width: 560px) {
+    width: 124px;
+  }
+}
+
+.logo_nolink {
+  cursor: none;
+  filter: grayscale(100%) brightness(0) invert(1);
+}
+
+.logo_link {
+  cursor: pointer;
+}
