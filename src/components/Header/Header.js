@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Logo from '../Logo/Logo';
 import Menu from '../Menu/Menu';
@@ -15,7 +15,9 @@ function Header() {
   const [menuWidth, setMenuWidth] = useState(document.body.clientWidth);
   const [scrollBarWidth, setScrollBarWidth] = useState(0);
   const [headerPaddingRight, setHeaderPaddingRight] = useState(0);
-  
+
+  const headerRef = useRef(null);
+
   useEffect(() => {
     let timer;
     if (menuIsOpen) {
@@ -41,13 +43,14 @@ function Header() {
   }, [menuIsOpen, windowOffsetWidth, menuWidth, scrollBarWidth]);
 
   useEffect(() => {
-    const header = document.getElementsByClassName('header')[0];
-    let paddingRight = window.getComputedStyle(header, null)
-      .getPropertyValue('padding-right');
+    let paddingRight = window
+                        .getComputedStyle(headerRef.current, null)
+                        .getPropertyValue('padding-right');
 
     paddingRight = parseInt(paddingRight, 10);
+
     setHeaderPaddingRight(paddingRight);
-  });
+  }, [windowOffsetWidth]);
 
   useEffect(() => {
     const callback = () => {
@@ -62,7 +65,7 @@ function Header() {
   }, [windowOffsetWidth]);
 
   return (
-    <div className='header'>
+    <div className='header' ref={headerRef}>
       <Logo />
       <MenuMobile 
         headerPaddingRight={headerPaddingRight}
