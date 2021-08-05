@@ -50,7 +50,7 @@ function Header() {
     paddingRight = parseInt(paddingRight, 10);
 
     setHeaderPaddingRight(paddingRight);
-  }, [windowOffsetWidth]);
+  });
 
   useEffect(() => {
     const callback = () => {
