@@ -9,13 +9,12 @@ import './Menu.scss';
 function MenuMobile(props) {
   const { 
     scrollBarWidth, 
-    headerPaddingRight, 
     menuIsOpen, 
     setMenuIsOpen } = props;
 
   const navWrapClassName = menuIsOpen ? 'nav-wrap nav-wrap_open' : 'nav-wrap';
   const closeStyle = {
-    marginRight: scrollBarWidth + headerPaddingRight + 'px'
+    marginRight: scrollBarWidth + 'px'
   }
 
   return (

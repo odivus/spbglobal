@@ -10,11 +10,9 @@ import './Header.scss';
 
 function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-
   const [windowOffsetWidth, setWindowOffsetWidth] = useState(document.body.offsetWidth);
   const [menuWidth, setMenuWidth] = useState(document.body.clientWidth);
   const [scrollBarWidth, setScrollBarWidth] = useState(0);
-  const [headerPaddingRight, setHeaderPaddingRight] = useState(0);
 
   const headerRef = useRef(null);
 
@@ -43,16 +41,6 @@ function Header() {
   }, [menuIsOpen, windowOffsetWidth, menuWidth, scrollBarWidth]);
 
   useEffect(() => {
-    let paddingRight = window
-                        .getComputedStyle(headerRef.current, null)
-                        .getPropertyValue('padding-right');
-
-    paddingRight = parseInt(paddingRight, 10);
-
-    setHeaderPaddingRight(paddingRight);
-  });
-
-  useEffect(() => {
     const callback = () => {
       setWindowOffsetWidth(document.body.offsetWidth);
     }
@@ -68,7 +56,6 @@ function Header() {
     <div className='header' ref={headerRef}>
       <Logo />
       <MenuMobile 
-        headerPaddingRight={headerPaddingRight}
         scrollBarWidth={scrollBarWidth}
         menuIsOpen={menuIsOpen}
         setMenuIsOpen={setMenuIsOpen}
