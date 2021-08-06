@@ -14,7 +14,6 @@ function Header() {
   const [windowOffsetWidth, setWindowOffsetWidth] = useState(document.body.offsetWidth);
   const [menuWidth, setMenuWidth] = useState(document.body.clientWidth);
   const [scrollBarWidth, setScrollBarWidth] = useState(0);
-  const [headerPaddingRight, setHeaderPaddingRight] = useState(0);
 
   const headerRef = useRef(null);
 
