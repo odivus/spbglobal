@@ -10,7 +10,6 @@ import './Header.scss';
 
 function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-
   const [windowOffsetWidth, setWindowOffsetWidth] = useState(document.body.offsetWidth);
   const [menuWidth, setMenuWidth] = useState(document.body.clientWidth);
   const [scrollBarWidth, setScrollBarWidth] = useState(0);
