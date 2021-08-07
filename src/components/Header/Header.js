@@ -10,8 +10,11 @@ import './Header.scss';
 
 function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [windowOffsetWidth, setWindowOffsetWidth] = useState(document.body.offsetWidth);
-  const [menuWidth, setMenuWidth] = useState(document.body.clientWidth);
+  const [
+    windowOffsetWidth, 
+    setWindowOffsetWidth
+  ] = useState(document.body.offsetWidth);
+
   const [scrollBarWidth, setScrollBarWidth] = useState(0);
 
   const headerRef = useRef(null);
@@ -21,36 +24,32 @@ function Header() {
     if (menuIsOpen) {
       timer = setTimeout(() => {
         document.body.style.overflow = 'hidden';
-        if (scrollBarWidth <= 0) {
-          setWindowOffsetWidth(document.body.offsetWidth);
+        if (document.body.clientWidth > windowOffsetWidth) {
+          setScrollBarWidth(document.body.clientWidth - windowOffsetWidth);
         }
       }, 400);
-    } else {
-      document.body.style.overflow = 'visible';
     }
-    return () => window.clearTimeout(timer);
-  }, [menuIsOpen, scrollBarWidth]);
 
-  useEffect(() => {
-    if (scrollBarWidth > 0) return;
-    if (menuIsOpen) {
-      setMenuWidth(document.body.clientWidth);
-      const width = windowOffsetWidth - menuWidth;
-      if (width > 0) setScrollBarWidth(width);
+    if (!menuIsOpen) {
+      document.body.style.overflow = 'visible';
+      setWindowOffsetWidth(document.body.offsetWidth);
     }
-  }, [menuIsOpen, windowOffsetWidth, menuWidth, scrollBarWidth]);
+
+    return () => window.clearTimeout(timer);
+
+  }, [menuIsOpen, scrollBarWidth, windowOffsetWidth]);
 
   useEffect(() => {
     const callback = () => {
+      if (document.body.offsetWidth >= 1080) setMenuIsOpen(false);
       setWindowOffsetWidth(document.body.offsetWidth);
     }
+    
     window.addEventListener('resize', callback, false);
+    
     return () => window.removeEventListener('resize', callback);
-  }, []);
 
-  useEffect(() => {
-    if (windowOffsetWidth >= 1080) setMenuIsOpen(false);
-  }, [windowOffsetWidth]);
+  }, []);
 
   return (
     <div className='header' ref={headerRef}>
