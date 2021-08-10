@@ -5,4 +5,4 @@
 По ссылке может открываться дольше обычного, это связяно с ограничениями бесплатного хостинга.
 
 ## Стек
-React, React Hook Form, Javascript, Scss BEM, GSAP (ScrollTrigger)
+React, React Router, React Hook Form, Javascript, Scss BEM, GSAP (ScrollTrigger)
