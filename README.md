@@ -1,4 +1,4 @@
-# SPBGlobal
+# SPB Global
 Сайт вымышленного венчурного фонда  
 [https://spbglobal.vercel.app](https://spbglobal.vercel.app)
 
